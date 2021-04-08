@@ -15,7 +15,7 @@ public class CountServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        out.println("<h2>Hello, World!</h2>");
+//        out.println("<h2>Hello, World!</h2>");
         Integer count = new Integer(0);
         String head;
         HttpSession session = null;
@@ -28,6 +28,13 @@ public class CountServlet extends HttpServlet {
                 count = new Integer(oldcount.intValue() + 1);
             }
         }
+        if (request.getParameter("reset") != null) {
+
+            System.out.println("The value of reset is: ");
+            count = 0;
+
+        }
+
         session.putValue("count", count);
         out.println("<HTML><BODY BGCOLOR=\"#FDF5E6\">\n" +
                 "<H2 ALIGN=\"CENTER\">" + head + "</H2>\n" +

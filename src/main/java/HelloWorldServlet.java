@@ -7,15 +7,20 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-@WebServlet(name = "HelloWorldServlet", urlPatterns = "/hello-world")
+@WebServlet(name = "HelloWorldServlet", urlPatterns = "/hello")
 public class HelloWorldServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        out.println("<h2>Hello, World!</h2>");
+        String thingToBeGreeted = "World";
+        thingToBeGreeted = request.getParameter("name");
+        if (thingToBeGreeted == null) {
+            thingToBeGreeted = "World";
+        }
+            String output = String.format("<h2>Hello, %s!</h2>", thingToBeGreeted);
+        out.println(output);
     }
-
 
 }
