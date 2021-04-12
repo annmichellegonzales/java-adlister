@@ -28,4 +28,6 @@ public class ViewContactsServlet extends HttpServlet {
         request.setAttribute("date", new Date());
 
     }
+
+
 }
