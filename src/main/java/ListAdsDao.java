@@ -39,4 +39,9 @@ public class ListAdsDao implements Ads {
         ));
         return ads;
     }
+
+//    public void insert(ad Ad) {
+//        this.ads.add();
+//    }
+
 }
