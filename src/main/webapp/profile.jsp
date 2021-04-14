@@ -12,5 +12,8 @@
         <h1>Viewing your profile.</h1>
     </div>
 
+    <br><br><a href="/logout">Logout</a>
+
+
 </body>
 </html>
