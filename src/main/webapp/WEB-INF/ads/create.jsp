@@ -12,5 +12,18 @@
 </head>
 <body>
 
+<div class="container">
+    <h1>Create Ad</h1>
+    <form action="/ads/create" method="post">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title">
+        <label for="description">Description</label>
+        <input type="text" id="description" name="description">
+        <button>Save</button>
+    </form>
+</div>
+
+
+
 </body>
 </html>
